@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio Page</title>
+  <style>
+    /* Reset margins and styling for the page */
+    html, body {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: black;
+        color: rgb(220, 220, 220);
+        font-family: Arial;
+    }
+
+    /* Header styling */
+    header {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 1rem 2rem;
+        background-color: #0f0f0f;
+        color: rgb(220, 220, 220);
+        border-radius: 10px;
+        transition: top 0.3s ease;
+        z-index: 1000;
+    }
+
+    /* Content container styling */
+    .content {
+        padding-top: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Styling for the rounded rectangle boxes */
+    .boxes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .box {
+        display: flex;
+        align-items: center;
+        background-color: #0f0f0f;
+        padding: 1rem;
+        border-radius: 15px;
+        font-size: 1.2rem;
+        width: 350px;
+    }
+
+    .box-image {
+        width: 50px;
+        height: auto;
+        object-fit: none;
+        margin-right: 1rem;
+    }
+
+    .box-content {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .box-title {
+        font-size: 1.4rem;
+        margin: 0;
+    }
+
+    .box-description {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+        color: rgb(158, 158, 158);
+    }
+
+    .project {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #0f0f0f;
+        padding: 2rem;
+        border-radius: 15px;
+        font-size: 1.2rem;
+        width: 350px;
+        height: 300px;
+        position: relative;
+    }
+
+    /* Square buttons at the bottom right */
+    .button {
+        color: #ffffff;
+        font-size: 1.5rem;
+        width: 40px;
+        height: 40px;
+        background-color: #00428d;
+        border: none;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none; /* Remove underline */
+    }
+
+    /* Button hover effect */
+    .button:hover {
+        background-color: #2f65fa;
+    }
+
+    .language-container {
+        display: flex;
+        gap: 5px;
+        margin-top: 10px;
+        max-width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .language {
+        width: 100px;
+        height: 40px;
+        background-color: rgb(36, 36, 36);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    /* Contact Section Styling */
+    .contact-title {
+        font-size: 2rem;
+        color: rgb(220, 220, 220);
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .contact-description {
+        font-size: 1.1rem;
+        color: rgb(158, 158, 158);
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .contact-info {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .contact-link {
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        color: #ffffff;
+        transition: background-color 0.3s ease;
+    }
+
+    .email-link {
+        background-color: #00428d;
+    }
+
+    .github-link {
+        background-color: #333333;
+    }
+
+    .contact-link:hover {
+        opacity: 0.8; /* Slight opacity change when hovering */
+        transform: scale(1.05);
+    }
+
+    .contact-link:active {
+        transform: scale(0.95);
+    }
+
+    /* Hover effect for all buttons */
+    .button:hover {
+        background-color: #2f65fa;
+        transform: scale(1.05);
+    }
+
+    /* Hover effect for all buttons */
+    .button:active {
+        transform: scale(0.95);
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Fixed centered header -->
+  <header id="topHeader">
+    Hello There!
+  </header>
+  
+  <!-- Main content area with centered text and boxes -->
+  <div class="content">
+    <h1>Current Languages</h1>
+    <div class="boxes">
+        <div class="box">
+            <img src="python.png" alt="IMG" class="box-image">
+            <div class="box-content">
+              <h2 class="box-title">Python</h2>
+            </div>
+        </div>
+        <div class="box">
+            <img src="java.png" alt="IMG" class="box-image">
+            <div class="box-content">
+              <h2 class="box-title">Java</h2>
+            </div>
+        </div>
+        <div class="box">
+            <img src="sql.png" alt="IMG" class="box-image">
+            <div class="box-content">
+            <h2 class="box-title">SQL</h2>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+
+    <!-- Main content area with centered text and boxes -->
+    <div class="content">
+        <h1>Projects</h1>
+        <div class="boxes">
+            <div class="project">
+                <div class="box-content">
+                    <h2 class="box-title">Velocity</h2>
+                    <h2 class="box-description">A fun and simple mobile game where you control two balls, one on each side of the screen, players aim at to reach a maximum height within the target range.</h2>
+                    <a href="https://github.com/ColeCollector/Velocity" class="button">↗</a>
+                    <div class="language-container">
+                        <div class="language">Python</div>
+                        <div class="language">Kivy</div>
+                        <div class="language">Json</div>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="box-content">
+                    <h2 class="box-title">Hiking Simulator</h2>
+                    <h2 class="box-description">A 2d game about walking along a trail with various biomes and obstacles. Complex gameplay and unique art.</h2>
+                    <a href="https://github.com/ColeCollector/Hiking_Simulator" class="button">↗</a>
+                    <div class="language-container">
+                        <div class="language">Python</div>
+                        <div class="language">Pygame</div>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="box-content">
+                    <h2 class="box-title">Keyboard Analyzer</h2>
+                    <h2 class="box-description">A keyboard layout analyzer and generator. Generates layouts through a series of algorithms.</h2>
+                    <a href="https://github.com/ColeCollector/Keyboard-Analyzer" class="button">↗</a>
+                    <div class="language-container">
+                        <div class="language">Python</div>
+                        <div class="language">Kivy</div>
+                        <div class="language">Json</div>
+                        <div class="language">Itertools</div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="content">
+        <h2 class="contact-title">Contact Me</h2>
+        <p class="contact-description">If you have any questions or just want to say hi, feel free to reach out to me!</p>
+        <div class="contact-info">
+            <a href="mailto:themondee@gmail.com" class="contact-link email-link">Email Me</a>
+            <a href="https://github.com/ColeCollector"class="contact-link github-link">GitHub</a>
+        </div>
+    </div>
+
+  <!-- JavaScript to hide the header when scrolling -->
+  <script>
+    window.addEventListener('scroll', function() {
+      var header = document.getElementById('topHeader');
+      if (window.scrollY > 0) {
+        header.style.top = "-100px";
+      } else {
+        header.style.top = "20px";
+      }
+    });
+  </script>
+</body>
+</html>
