@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portfolio Page</title>
   <style>
     /* Reset margins and styling for the page */
@@ -12,51 +11,65 @@
     }
 
     body {
-        background-color: black;
+        background-color: rgb(14, 14, 14);
         color: rgb(220, 220, 220);
         font-family: Arial;
+        padding-bottom: 20px;
     }
 
     /* Header styling */
     header {
         position: fixed;
         top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 1rem 2rem;
-        background-color: #0f0f0f;
+        left: 40.5%;
+        gap: 2rem;
+        padding: 1rem;
+        border: 1px solid #444;
         color: rgb(220, 220, 220);
+        font-family: Arial, sans-serif;
         border-radius: 10px;
-        transition: top 0.3s ease;
-        z-index: 1000;
+        transition: top 1s ease;
     }
 
+    .header-link {
+        color: rgb(220, 220, 220);
+        text-decoration: none;
+        font-size: 1.2rem;
+        padding: 0.5rem;
+    }
+
+    .header-link:hover {
+        background-color: #2f65fa;
+        border-radius: 5px;
+    }
+    
     /* Content container styling */
     .content {
-        padding-top: 200px;
+        padding-top: 150px;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+        align-items: flex-start;
+        text-align: left;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding-left: 1rem; 
+        padding-right: 1rem;
     }
 
-    /* Styling for the rounded rectangle boxes */
+    /* Styling for the boxes */
     .boxes {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-        margin-top: 1rem;
+        justify-content: flex-start;
+        gap: 15px;
+        width: 100%;
     }
 
     .box {
-        display: flex;
-        align-items: center;
-        background-color: #0f0f0f;
         padding: 1rem;
-        border-radius: 15px;
-        font-size: 1.2rem;
-        width: 350px;
+        width: 200px;
+        height: 60px;
+        background-color: #161616;
     }
 
     .box-image {
@@ -81,19 +94,32 @@
         font-size: 1rem;
         margin-top: 0.5rem;
         color: rgb(158, 158, 158);
+        font-weight: 300;
     }
 
     .project {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        background-color: #0f0f0f;
-        padding: 2rem;
-        border-radius: 15px;
-        font-size: 1.2rem;
-        width: 350px;
-        height: 300px;
+        padding: 1.5rem;
+        width: 450px;
+        height: 500px;
         position: relative;
+        background-color: #161616;
+    }
+
+    .project-title {
+        padding-top: 20px;
+        font-size: 1.4rem;
+        margin: 0;
+    }
+
+    .project-image {
+        width: 450px;
+        height: 350px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 15px;
     }
 
     /* Square buttons at the bottom right */
@@ -106,12 +132,12 @@
         border: none;
         border-radius: 5px;
         position: absolute;
-        bottom: 10px;
-        right: 10px;
+        bottom: 15px;
+        right: 15px;
         display: flex;
         justify-content: center;
         align-items: center;
-        text-decoration: none; /* Remove underline */
+        text-decoration: none;
     }
 
     /* Button hover effect */
@@ -123,12 +149,14 @@
         display: flex;
         gap: 5px;
         margin-top: 10px;
-        max-width: 100%;
+        max-width: 80%;
         flex-wrap: wrap;
+        bottom: 15px;
+        position: absolute;
     }
 
     .language {
-        width: 100px;
+        width: 80px;
         height: 40px;
         background-color: rgb(36, 36, 36);
         border-radius: 5px;
@@ -136,7 +164,16 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        font-size: 1rem;
+        font-size: 0.8rem;
+    }
+
+    /* Contact Section Styling */
+    .contact {
+        flex-direction: column;
+        padding: 2rem;
+        width: 1000px;
+        height: 200px;
+        position: relative;
     }
 
     /* Contact Section Styling */
@@ -180,7 +217,7 @@
     }
 
     .contact-link:hover {
-        opacity: 0.8; /* Slight opacity change when hovering */
+        opacity: 0.8;
         transform: scale(1.05);
     }
 
@@ -198,35 +235,55 @@
     .button:active {
         transform: scale(0.95);
     }
+    
+    .box, .project, .contact {
+        display: flex;
+        align-items: center;
+        border: 1px solid #444;
+        border-radius: 15px;
+        font-size: 1.2rem;
+    }
 
   </style>
 </head>
 <body>
   <!-- Fixed centered header -->
   <header id="topHeader">
-    Hello There!
+    <a href="#home" class="header-link">Home</a>
+    <a href="#projects" class="header-link">Projects</a>
+    <a href="#contact" class="header-link">Contact</a>
   </header>
   
+  <div id="home" class="content">
+    <h1>Hi! I'm Cole Newton!</h1>
+    <p>I'm a developer and student from Canada, British Columbia styudying at UBC, <br> 
+        working towards a computer science degree. I play chess in my free time, <br>
+        at my peak I was top 50 in Canada on chess.com!</p>
+  </div>
+
   <!-- Main content area with centered text and boxes -->
   <div class="content">
-    <h1>Current Languages</h1>
+    <h1>Technologies I am familiar with</h1>
     <div class="boxes">
         <div class="box">
-            <img src="python.png" alt="IMG" class="box-image">
+            <img src="python.png" class="box-image">
             <div class="box-content">
               <h2 class="box-title">Python</h2>
+              <h2 class="box-description">3 Years of Experience</h2>
             </div>
         </div>
         <div class="box">
-            <img src="java.png" alt="IMG" class="box-image">
+            <img src="java.png" class="box-image">
             <div class="box-content">
               <h2 class="box-title">Java</h2>
+              <h2 class="box-description">1 Year of Experience</h2>
             </div>
         </div>
         <div class="box">
-            <img src="sql.png" alt="IMG" class="box-image">
+            <img src="sql.png" class="box-image">
             <div class="box-content">
             <h2 class="box-title">SQL</h2>
+            <h2 class="box-description">1 Year of Experience</h2>
             </div>
         </div>
     </div>
@@ -234,13 +291,14 @@
   
 
     <!-- Main content area with centered text and boxes -->
-    <div class="content">
+    <div id="projects" class="content">
         <h1>Projects</h1>
         <div class="boxes">
             <div class="project">
                 <div class="box-content">
-                    <h2 class="box-title">Velocity</h2>
-                    <h2 class="box-description">A fun and simple mobile game where you control two balls, one on each side of the screen, players aim at to reach a maximum height within the target range.</h2>
+                    <img src="velocity.png" class="project-image">
+                    <h2 class="project-title">Velocity</h2>
+                    <h2 class="box-description">A simple mobile game where players aim at to reach a maximum height within the target range.</h2>
                     <a href="https://github.com/ColeCollector/Velocity" class="button">↗</a>
                     <div class="language-container">
                         <div class="language">Python</div>
@@ -251,8 +309,9 @@
             </div>
             <div class="project">
                 <div class="box-content">
-                    <h2 class="box-title">Hiking Simulator</h2>
-                    <h2 class="box-description">A 2d game about walking along a trail with various biomes and obstacles. Complex gameplay and unique art.</h2>
+                    <img src="hiking.png" class="project-image">
+                    <h2 class="project-title">Hiking Simulator</h2>
+                    <h2 class="box-description">A 2d game with complex gameplay and unique art about walking along a trail with various biomes and obstacles.</h2>
                     <a href="https://github.com/ColeCollector/Hiking_Simulator" class="button">↗</a>
                     <div class="language-container">
                         <div class="language">Python</div>
@@ -262,7 +321,8 @@
             </div>
             <div class="project">
                 <div class="box-content">
-                    <h2 class="box-title">Keyboard Analyzer</h2>
+                    <img src="keyboard.png" class="project-image">
+                    <h2 class="project-title">Keyboard Analyzer</h2>
                     <h2 class="box-description">A keyboard layout analyzer and generator. Generates layouts through a series of algorithms.</h2>
                     <a href="https://github.com/ColeCollector/Keyboard-Analyzer" class="button">↗</a>
                     <div class="language-container">
@@ -277,25 +337,27 @@
     </div>
 
     <!-- Contact Section -->
-    <div class="content">
-        <h2 class="contact-title">Contact Me</h2>
-        <p class="contact-description">If you have any questions or just want to say hi, feel free to reach out to me!</p>
-        <div class="contact-info">
-            <a href="mailto:themondee@gmail.com" class="contact-link email-link">Email Me</a>
-            <a href="https://github.com/ColeCollector"class="contact-link github-link">GitHub</a>
+    <div id="contact" class="content">
+            <div class="contact">
+            <h2 class="contact-title">Contact Me</h2>
+            <p class="contact-description">Like what you see? feel free to reach out to me!</p>
+            <div class="contact-info">
+                <a href="mailto:themondee@gmail.com" class="contact-link email-link">Email Me</a>
+                <a href="https://github.com/ColeCollector"class="contact-link github-link">GitHub</a>
+            </div>
         </div>
     </div>
-
-  <!-- JavaScript to hide the header when scrolling -->
-  <script>
-    window.addEventListener('scroll', function() {
-      var header = document.getElementById('topHeader');
-      if (window.scrollY > 0) {
-        header.style.top = "-100px";
-      } else {
-        header.style.top = "20px";
-      }
-    });
-  </script>
+    
+    <!-- JavaScript to hide the header when scrolling -->
+   <script>
+        window.addEventListener('scroll', function() {
+        var header = document.getElementById('topHeader');
+        if (window.scrollY > 0) {
+            header.style.top = "-100px";
+        } else {
+            header.style.top = "20px";
+        }
+        });
+   </script>
 </body>
 </html>
