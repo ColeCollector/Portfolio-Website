@@ -62,21 +62,27 @@
     }
 
     .box {
+        position: relative;
+        display: flex;
+        align-items: center;
         padding: 16px;
         width: 208px;
         height: 60px;
         background-color: #161616;
     }
 
-    .box-image {
-        width: 50px;
-        height: auto;
-        margin-right: 1rem;
-    }
-
     .box-title {
         font-size: 1.4rem;
         margin: 0;
+    }
+    
+    .box-text {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        top: 10px;
+        left: 80px;
     }
 
     .box-description {
@@ -84,6 +90,44 @@
         margin-top: 0.5rem;
         color: rgb(158, 158, 158);
         font-weight: 300;
+    }
+    
+    .box-image {
+        width: 50px;
+        height: auto;
+        margin-right: 1rem;
+    }
+
+    .hover-image {
+        width: 450px;
+        height: 350px;
+        display: block;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 15px;
+    }
+
+    .hover-image img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 0.5s ease;
+    }
+
+    .hover-image .hover {
+        opacity: 0;
+    }
+
+    .hover-image:hover .hover {
+        opacity: 1;
+    }
+
+    .hover-image:hover .default {
+        opacity: 0;
     }
 
     .project {
@@ -223,6 +267,26 @@
         border-radius: 15px;
         font-size: 1.2rem;
     }
+
+    .typewriter {
+       display: flex;
+    }
+
+    .typewriter h1 {
+       white-space: nowrap;
+       overflow: hidden;
+       border-right: 1px solid;
+       animation: typing 2s steps(19) forwards;
+    }
+    
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+        to {
+            width: 100%;
+        }
+    }
   </style>
 </head>
 <body>
@@ -247,7 +311,11 @@
     </header>
     
     <div id="home" class="content">
-        <h1>Hi! I'm <span style="color: rgb(85, 112, 233);">Cole Newton</span>!</h1>
+        <div class = "typewriter">
+            <div>
+                <h1>Hi! I'm <span style="color: rgb(85, 112, 233);">Cole Newton</span>!</h1>
+            </div>
+        </div>
         <p class="intro">
             I'm a developer and student from Vancouver, Canada studying<br>
             Computer Science at UBC. I play <span style="color: rgb(85, 112, 233);">chess</span> in my free time, at my peak<br>
@@ -260,28 +328,28 @@
         <div class="boxes">
             <div class="box">
                 <img src="icons/python.png" class="box-image">
-                <div>
+                <div class = "box-text">
                 <h2 class="box-title">Python</h2>
                 <h2 class="box-description">3 Years of Personal and Academic use</h2>
                 </div>
             </div>
             <div class="box">
                 <img src="icons/java.png" class="box-image">
-                <div>
+                <div class = "box-text">
                 <h2 class="box-title">Java</h2>
                 <h2 class="box-description">1 Year of Academic Experience</h2>
                 </div>
             </div>
             <div class="box">
                 <img src="icons/sql.png" class="box-image">
-                <div>
+                <div class = "box-text">
                 <h2 class="box-title">SQL</h2>
                 <h2 class="box-description">1 Year of Personal Experience</h2>
                 </div>
             </div>
             <div class="box">
                 <img src="icons/html.png" class="box-image">
-                <div>
+                <div class = "box-text">
                 <h2 class="box-title">HTML</h2>
                 <h2 class="box-description">Still Learning</h2>
                 </div>
@@ -296,6 +364,21 @@
         <div class="boxes">
             <div class="project">
                 <div>
+                    <div class="hover-image">
+                        <img src="projects/hiking.png" class="hover-image default">
+                        <img src="projects/hiking2.png" class="hover-image hover">
+                    </div>
+                    <h2 class="box-title project-title">Hiking Simulator</h2>
+                    <h2 class="box-description">A 2d game with complex gameplay and unique art about walking along a trail with various biomes and obstacles.</h2>
+                    <a href="https://github.com/ColeCollector/Hiking_Simulator" class="button">↗</a>
+                    <div class="language-container">
+                        <div class="language">Python</div>
+                        <div class="language">Pygame</div>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div>
                     <img src="projects/velocity.png" class="project-image">
                     <h2 class="box-title project-title">Velocity</h2>
                     <h2 class="box-description">A simple mobile game where players aim at to reach a maximum height within the target range.</h2>
@@ -304,18 +387,6 @@
                         <div class="language">Python</div>
                         <div class="language">Kivy</div>
                         <div class="language">Json</div>
-                    </div>
-                </div>
-            </div>
-            <div class="project">
-                <div>
-                    <img src="projects/hiking.png" class="project-image">
-                    <h2 class="box-title project-title">Hiking Simulator</h2>
-                    <h2 class="box-description">A 2d game with complex gameplay and unique art about walking along a trail with various biomes and obstacles.</h2>
-                    <a href="https://github.com/ColeCollector/Hiking_Simulator" class="button">↗</a>
-                    <div class="language-container">
-                        <div class="language">Python</div>
-                        <div class="language">Pygame</div>
                     </div>
                 </div>
             </div>
