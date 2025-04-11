@@ -61,13 +61,13 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
-        gap: 15px;
+        gap: 16px;
         width: 100%;
     }
 
     .box {
-        padding: 1rem;
-        width: 200px;
+        padding: 16px;
+        width: 208px;
         height: 60px;
         background-color: #161616;
     }
@@ -75,7 +75,6 @@
     .box-image {
         width: 50px;
         height: auto;
-        object-fit: none;
         margin-right: 1rem;
     }
 
@@ -100,7 +99,7 @@
     .project {
         display: flex;
         flex-direction: column;
-        padding: 1.5rem;
+        padding: 24px;
         width: 450px;
         height: 500px;
         position: relative;
@@ -167,11 +166,16 @@
         font-size: 0.8rem;
     }
 
+    .intro {
+        font-size: 1.2rem;
+        color: rgb(194, 194, 194);
+    }
+
     /* Contact Section Styling */
     .contact {
         flex-direction: column;
         padding: 2rem;
-        width: 1000px;
+        width: 950px;
         height: 200px;
         position: relative;
     }
@@ -256,34 +260,42 @@
   
   <div id="home" class="content">
     <h1>Hi! I'm Cole Newton!</h1>
-    <p>I'm a developer and student from Canada, British Columbia styudying at UBC, <br> 
-        working towards a computer science degree. I play chess in my free time, <br>
-        at my peak I was top 50 in Canada on chess.com!</p>
+    <p class="intro">
+        I'm a developer and student from Vancouver, Canada studying<br>
+        Computer Science at UBC. I play chess in my free time, at my peak<br>
+        I was top 50 in Canada on chess.com!</p>
   </div>
 
   <!-- Main content area with centered text and boxes -->
   <div class="content">
-    <h1>Technologies I am familiar with</h1>
+    <h1>Technologies</h1>
     <div class="boxes">
         <div class="box">
-            <img src="python.png" class="box-image">
+            <img src="icons/python.png" class="box-image">
             <div class="box-content">
               <h2 class="box-title">Python</h2>
-              <h2 class="box-description">3 Years of Experience</h2>
+              <h2 class="box-description">3 Years of Personal and Academic use</h2>
             </div>
         </div>
         <div class="box">
-            <img src="java.png" class="box-image">
+            <img src="icons/java.png" class="box-image">
             <div class="box-content">
               <h2 class="box-title">Java</h2>
-              <h2 class="box-description">1 Year of Experience</h2>
+              <h2 class="box-description">1 Year of Academic Experience</h2>
             </div>
         </div>
         <div class="box">
-            <img src="sql.png" class="box-image">
+            <img src="icons/sql.png" class="box-image">
             <div class="box-content">
             <h2 class="box-title">SQL</h2>
-            <h2 class="box-description">1 Year of Experience</h2>
+            <h2 class="box-description">1 Year of Personal Experience</h2>
+            </div>
+        </div>
+        <div class="box">
+            <img src="icons/html.png" class="box-image">
+            <div class="box-content">
+            <h2 class="box-title">HTML</h2>
+            <h2 class="box-description">Still Learning</h2>
             </div>
         </div>
     </div>
@@ -296,7 +308,7 @@
         <div class="boxes">
             <div class="project">
                 <div class="box-content">
-                    <img src="velocity.png" class="project-image">
+                    <img src="projects/velocity.png" class="project-image">
                     <h2 class="project-title">Velocity</h2>
                     <h2 class="box-description">A simple mobile game where players aim at to reach a maximum height within the target range.</h2>
                     <a href="https://github.com/ColeCollector/Velocity" class="button">↗</a>
@@ -309,7 +321,7 @@
             </div>
             <div class="project">
                 <div class="box-content">
-                    <img src="hiking.png" class="project-image">
+                    <img src="projects/hiking.png" class="project-image">
                     <h2 class="project-title">Hiking Simulator</h2>
                     <h2 class="box-description">A 2d game with complex gameplay and unique art about walking along a trail with various biomes and obstacles.</h2>
                     <a href="https://github.com/ColeCollector/Hiking_Simulator" class="button">↗</a>
@@ -321,7 +333,7 @@
             </div>
             <div class="project">
                 <div class="box-content">
-                    <img src="keyboard.png" class="project-image">
+                    <img src="projects/keyboard.png" class="project-image">
                     <h2 class="project-title">Keyboard Analyzer</h2>
                     <h2 class="box-description">A keyboard layout analyzer and generator. Generates layouts through a series of algorithms.</h2>
                     <a href="https://github.com/ColeCollector/Keyboard-Analyzer" class="button">↗</a>
@@ -347,7 +359,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- JavaScript to hide the header when scrolling -->
    <script>
         window.addEventListener('scroll', function() {
