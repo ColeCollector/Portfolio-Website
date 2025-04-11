@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Portfolio Page</title>
+  <link rel="stylesheet" href="lines.css">
   <style>
     /* Reset margins and styling for the page */
     html, body {
+        z-index: 0;
         margin: 0;
         padding: 0;
     }
@@ -28,7 +30,7 @@
         color: rgb(220, 220, 220);
         font-family: Arial, sans-serif;
         border-radius: 10px;
-        transition: top 1s ease;
+        transition: top 0.6s ease;
     }
 
     .header-link {
@@ -36,10 +38,6 @@
         text-decoration: none;
         font-size: 1.2rem;
         padding: 0.5rem;
-    }
-
-    .header-link:hover {
-        background-color: #2f65fa;
         border-radius: 5px;
     }
     
@@ -127,7 +125,6 @@
         font-size: 1.5rem;
         width: 40px;
         height: 40px;
-        background-color: #00428d;
         border: none;
         border-radius: 5px;
         position: absolute;
@@ -137,11 +134,6 @@
         justify-content: center;
         align-items: center;
         text-decoration: none;
-    }
-
-    /* Button hover effect */
-    .button:hover {
-        background-color: #2f65fa;
     }
 
     .language-container {
@@ -173,24 +165,25 @@
 
     /* Contact Section Styling */
     .contact {
+        background-color: rgb(14, 14, 14);
         flex-direction: column;
         padding: 2rem;
         width: 950px;
-        height: 200px;
-        position: relative;
+        height: 159px;
     }
 
     /* Contact Section Styling */
     .contact-title {
         font-size: 2rem;
         color: rgb(220, 220, 220);
-        margin-bottom: 10px;
+        margin-bottom: 0px;
+        margin-top: 5px;
         text-align: center;
     }
 
     .contact-description {
         font-size: 1.1rem;
-        color: rgb(158, 158, 158);
+        color: rgb(194, 194, 194);
         margin-bottom: 20px;
         text-align: center;
     }
@@ -209,34 +202,29 @@
         text-decoration: none;
         text-align: center;
         color: #ffffff;
-        transition: background-color 0.3s ease;
     }
 
-    .email-link {
-        background-color: #00428d;
+    .email-link, .button, .header-link:hover{
+        background-color: rgb(46, 83, 250);
     }
 
     .github-link {
         background-color: #333333;
     }
 
-    .contact-link:hover {
-        opacity: 0.8;
-        transform: scale(1.05);
-    }
-
-    .contact-link:active {
-        transform: scale(0.95);
-    }
-
-    /* Hover effect for all buttons */
-    .button:hover {
-        background-color: #2f65fa;
+    .github-link:hover {
+        background-color: #4e4e4e;
         transform: scale(1.05);
     }
 
     /* Hover effect for all buttons */
-    .button:active {
+    .button:hover, .email-link:hover {
+        background-color: rgb(85, 112, 233);
+        transform: scale(1.05);
+    }
+
+    /* Hover effect for all buttons */
+    .button:active, .contact-link:active {
         transform: scale(0.95);
     }
     
@@ -247,59 +235,71 @@
         border-radius: 15px;
         font-size: 1.2rem;
     }
-
   </style>
 </head>
 <body>
-  <!-- Fixed centered header -->
-  <header id="topHeader">
-    <a href="#home" class="header-link">Home</a>
-    <a href="#projects" class="header-link">Projects</a>
-    <a href="#contact" class="header-link">Contact</a>
-  </header>
-  
-  <div id="home" class="content">
-    <h1>Hi! I'm Cole Newton!</h1>
-    <p class="intro">
-        I'm a developer and student from Vancouver, Canada studying<br>
-        Computer Science at UBC. I play chess in my free time, at my peak<br>
-        I was top 50 in Canada on chess.com!</p>
-  </div>
+    <div class="lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
 
-  <!-- Main content area with centered text and boxes -->
-  <div class="content">
-    <h1>Technologies</h1>
-    <div class="boxes">
-        <div class="box">
-            <img src="icons/python.png" class="box-image">
-            <div class="box-content">
-              <h2 class="box-title">Python</h2>
-              <h2 class="box-description">3 Years of Personal and Academic use</h2>
+    <!-- Fixed centered header -->
+    <header id="topHeader">
+        <a href="#home" class="header-link">Home</a>
+        <a href="#projects" class="header-link">Projects</a>
+        <a href="#contact" class="header-link">Contact</a>
+    </header>
+    
+    <div id="home" class="content">
+        <h1>Hi! I'm <span style="color: rgb(85, 112, 233);">Cole Newton</span>!</h1>
+        <p class="intro">
+            I'm a developer and student from Vancouver, Canada studying<br>
+            Computer Science at UBC. I play <span style="color: rgb(85, 112, 233);">chess</span> in my free time, at my peak<br>
+            I was top 50 in Canada on chess.com!</p>
+    </div>
+
+    <!-- Main content area with centered text and boxes -->
+    <div class="content">
+        <h1>Technologies</h1>
+        <div class="boxes">
+            <div class="box">
+                <img src="icons/python.png" class="box-image">
+                <div class="box-content">
+                <h2 class="box-title">Python</h2>
+                <h2 class="box-description">3 Years of Personal and Academic use</h2>
+                </div>
             </div>
-        </div>
-        <div class="box">
-            <img src="icons/java.png" class="box-image">
-            <div class="box-content">
-              <h2 class="box-title">Java</h2>
-              <h2 class="box-description">1 Year of Academic Experience</h2>
+            <div class="box">
+                <img src="icons/java.png" class="box-image">
+                <div class="box-content">
+                <h2 class="box-title">Java</h2>
+                <h2 class="box-description">1 Year of Academic Experience</h2>
+                </div>
             </div>
-        </div>
-        <div class="box">
-            <img src="icons/sql.png" class="box-image">
-            <div class="box-content">
-            <h2 class="box-title">SQL</h2>
-            <h2 class="box-description">1 Year of Personal Experience</h2>
+            <div class="box">
+                <img src="icons/sql.png" class="box-image">
+                <div class="box-content">
+                <h2 class="box-title">SQL</h2>
+                <h2 class="box-description">1 Year of Personal Experience</h2>
+                </div>
             </div>
-        </div>
-        <div class="box">
-            <img src="icons/html.png" class="box-image">
-            <div class="box-content">
-            <h2 class="box-title">HTML</h2>
-            <h2 class="box-description">Still Learning</h2>
+            <div class="box">
+                <img src="icons/html.png" class="box-image">
+                <div class="box-content">
+                <h2 class="box-title">HTML</h2>
+                <h2 class="box-description">Still Learning</h2>
+                </div>
             </div>
         </div>
     </div>
-  </div>
   
 
     <!-- Main content area with centered text and boxes -->
@@ -352,7 +352,7 @@
     <div id="contact" class="content">
             <div class="contact">
             <h2 class="contact-title">Contact Me</h2>
-            <p class="contact-description">Like what you see? feel free to reach out to me!</p>
+            <p class="contact-description">Like what you see? Feel free to reach out to me!</p>
             <div class="contact-info">
                 <a href="mailto:themondee@gmail.com" class="contact-link email-link">Email Me</a>
                 <a href="https://github.com/ColeCollector"class="contact-link github-link">GitHub</a>
@@ -365,7 +365,7 @@
         window.addEventListener('scroll', function() {
         var header = document.getElementById('topHeader');
         if (window.scrollY > 0) {
-            header.style.top = "-100px";
+            header.style.top = "-60px";
         } else {
             header.style.top = "20px";
         }
