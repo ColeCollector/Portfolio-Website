@@ -21,14 +21,15 @@
 
     /* Header styling */
     header {
-        position: fixed;
+        position: absolute;
         top: 20px;
-        left: 40.5%;
+        left: 50%;
+        transform: translateX(-50%);
         gap: 2rem;
         padding: 1rem;
-        border: 1px solid #444;
-        border-radius: 10px;
-        transition: top 0.6s ease;
+        padding-inline: 0.5rem;
+        border: 1px solid #333333;
+        border-radius: 12px;
     }
 
     .header-link {
@@ -69,8 +70,14 @@
         width: 208px;
         height: 60px;
         background-color: #161616;
+        transition: transform 0.4s ease;
     }
 
+    
+    .box:hover {
+        transform: translateY(-10px);
+    }
+    
     .box-title {
         font-size: 1.4rem;
         margin: 0;
@@ -105,7 +112,7 @@
         position: relative;
         margin-left: auto;
         margin-right: auto;
-        border-radius: 15px;
+        border-radius: 12px;
     }
 
     .hover-image img {
@@ -161,7 +168,7 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
-        border-radius: 15px;
+        border-radius: 12px;
     }
 
     /* Square buttons at the bottom right */
@@ -204,9 +211,10 @@
         font-size: 0.8rem;
     }
 
-    .intro {
+    .desc {
+        margin-top: 0px;
+        position: relative;
         font-size: 1.2rem;
-        color: rgb(194, 194, 194);
     }
 
     /* Contact Section Styling */
@@ -250,21 +258,21 @@
     }
 
 
-    .email-link, .button{
-        background-color: rgb(101, 22, 247);
-    }
-    
-    .github-link {
+    .email-link {
         background-color: #333333;
     }
+    
+    .github-link, .button {
+        background-color: rgb(101, 22, 247);
+    }
 
-    .github-link:hover {
+    .email-link:hover {
         background-color: #4e4e4e;
         transform: scale(1.05);
     }
 
     /* Hover effect for all buttons */
-    .button:hover, .email-link:hover {
+    .button:hover, .github-link:hover {
         background-color: rgb(127, 87, 238);
         transform: scale(1.05);
     }
@@ -285,8 +293,8 @@
     
     .box, .project, .contact {
         display: flex;
-        border: 1px solid #444;
-        border-radius: 15px;
+        border: 1px solid #333333;
+        border-radius: 12px;
         font-size: 1.2rem;
     }
 
@@ -326,7 +334,7 @@
     </div>
 
     <!-- Fixed centered header -->
-    <header id="topHeader">
+    <header id="header">
         <a href="#home" class="header-link">Home</a>
         <a href="#projects" class="header-link">Projects</a>
         <a href="#contact" class="header-link">Contact</a>
@@ -338,17 +346,18 @@
                 <h1>Hi! I'm <span style="color: rgb(85, 112, 233);">Cole Newton</span>!</h1>
             </div>
         </div>
-        <p class="intro">
+        <p class="desc">
             I'm a developer and student from Vancouver, Canada studying<br>
             Computer Science at UBC. I play <span style="color: rgb(85, 112, 233);">chess</span> in my free time, at my peak<br>
-            I was top 50 in Canada on chess.com!</p>
+            I was top 50 in Canada on chess.com!
+        </p>
     </div>
 
     <!-- Main content area with centered text and boxes -->
     <div class="content">
         <h1>Technologies</h1>
         <div class="boxes">
-            <div class="box" style="background-color: rgb(19, 24, 58);">
+            <div class="box" style="background-color: rgb(19, 24, 58); border-color: rgb(85, 112, 233);">
                 <img src="icons/python.png" class="box-image">
                 <div class = "box-text">
                 <h2 class="box-title" style="color: rgb(85, 112, 233);">Python</h2>
@@ -381,8 +390,9 @@
   
 
     <!-- Main content area with centered text and boxes -->
-    <div id="projects" class="content">
-        <h1>Projects</h1>
+    <div class="content">
+        <h1 id="projects">Projects</h1>
+        <p class = "desc">You can zoom in on the images!</p>
         <div class="boxes">
             <div class="project">
                 <div class="hover-image-container">
@@ -464,59 +474,52 @@
 
     <!-- JavaScript to hide the header when scrolling -->
    <script>
-        window.addEventListener('scroll', function() {
-        var header = document.getElementById('topHeader');
-        if (window.scrollY > 0) {
-            header.style.top = "-60px";
-        } else {
-            header.style.top = "20px";
-        }
-        });
-
         document.querySelectorAll('.hover-image-container').forEach(container => {
-    const img = container.querySelector('.zoomable');
-    let timeoutId;
-    let showingHover;
-    let scale = 1.6;
+            const img = container.querySelector('.zoomable');
+            let timeoutId;
+            let showingHover;
+            let scale = 1;
 
-    container.addEventListener('mousemove', e => {
-        const rect = container.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
-        const y = ((e.clientY - rect.top) / rect.height) * 100;
+            container.addEventListener('mousemove', e => {
+                const rect = container.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
 
-        img.style.transformOrigin = `${x}% ${y}%`;
-        img.style.transform = `scale(${scale})`;
-    });
+                img.style.transformOrigin = `${x}% ${y}%`;
+                img.style.transform = `scale(${scale})`;
+            });
 
-    // Disable page scrolling while zooming
-    container.addEventListener('wheel', (e) => {
-        e.preventDefault();
+            // Disable page scrolling while zooming
+            container.addEventListener('wheel', (e) => {
+                if (e.deltaY < 0) {
+                    scale = Math.min(scale + 0.1, 3.5);
+                    e.preventDefault();
 
-        if (e.deltaY < 0) {
-            scale = Math.min(scale + 0.1, 3.5);
-        } else {
-            scale = Math.max(scale - 0.1, 1); 
-        }
-        img.style.transform = `scale(${scale})`;
-    }, { passive: false });
+                } else {
+                    scale = Math.max(scale - 0.1, 1); 
+                    if (scale != 1) {
+                        e.preventDefault();
+                    }
+                }
+   
+                img.style.transform = `scale(${scale})`;
+            }, { passive: false });
 
-    // Automatically switch images every 3 seconds
-    setInterval(() => {
-        if (img.dataset.hover) {
-            img.src = showingHover ? img.dataset.default : img.dataset.hover;
-            showingHover = !showingHover;
-        }
-    }, 3000);
+            // Automatically switch images every 3 seconds
+            setInterval(() => {
+                if (img.dataset.hover) {
+                    img.src = showingHover ? img.dataset.default : img.dataset.hover;
+                    showingHover = !showingHover;
+                }
+            }, 3000);
 
-    container.addEventListener('mouseleave', () => {
-        clearTimeout(timeoutId);
-        img.style.transform = "scale(1)";
-        img.style.transformOrigin = "center center";
-        scale = 1;  // Reset scale when mouse leaves
-    });
-});
-
-
+            container.addEventListener('mouseleave', () => {
+                clearTimeout(timeoutId);
+                img.style.transform = "scale(1)";
+                img.style.transformOrigin = "center center";
+                scale = 1;  // Reset scale when mouse leaves
+            });
+        });
    </script>
 </body>
 </html>
