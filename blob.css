@@ -1,0 +1,65 @@
+
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.7;
+    mix-blend-mode: screen;
+}
+
+.blob1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle at center, #ff6ec4, #7873f5);
+    top: 10%;
+    left: 0%;
+}
+
+.blob2 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle at center, #42e695, #3bb2b8);
+    bottom: 15%;
+    right: 15%;
+}
+
+.blob3 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle at center, #f093fb, #f5576c);
+    top: 40%;
+    right: 5%;
+}
+
+.blob4 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle at center, #5d55d4, #1334c4);
+    top: 150%;
+    right: 15%;
+}
+
+.blob5 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle at center, #fbeb93, #f5576c);
+    top: 90%;
+    left: 10%;
+}
+
+.blob6 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle at center, #e43500, #b93143);
+    top: 110%;
+    left: 5%;
+}
+
+.blob7 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle at center, #6112f3, #5b0694);
+    top: 200%;
+    left: 15%;
+}
