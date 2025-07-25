@@ -3,344 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Portfolio Page</title>
-  <link rel="stylesheet" href="lines.css">
-  <link rel="stylesheet" href="blob.css">
-  <style>
-    html, body {
-        z-index: 0;
-        margin: 0;
-        padding: 0;
-    }
-
-    body {
-        background-color: rgb(15, 13, 19);
-        color: rgb(220, 220, 220);
-        font-family: Arial;
-        padding-bottom: 20px;
-        cursor: none;
-    }
-
-    header {
-        position: absolute;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        gap: 2rem;
-        padding: 1rem;
-        padding-inline: 0.5rem;
-        border: 1px solid #333333;
-        border-radius: 12px;
-    }
-
-    .header-link {
-        color: rgb(220, 220, 220);
-        text-decoration: none;
-        font-size: 1.2rem;
-        padding: 0.5rem;
-        border-radius: 5px;
-    }
-    
-    .content {
-        padding-top: 150px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-        max-width: 1100px;
-        margin: 0 auto;
-        padding-left: 1rem; 
-        padding-right: 1rem;
-    }
-
-    .boxes {
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        gap: 16px;
-        width: 100%;
-    }
-
-    .box {
-        position: relative;
-        display: flex;
-        align-items: center;
-        padding: 16px;
-        width: 298px;
-        height: 60px;
-        background-color: #161616;
-        transition: transform 0.4s ease;
-    }
-
-    .box:hover {
-        transform: translateY(-10px);
-    }
-    
-    .box-title {
-        font-size: 1.4rem;
-        margin: 0;
-    }
-    
-    .box-text {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        top: 10px;
-        left: 85px;
-        margin-right: 15px;
-    }
-
-    .box-description {
-        font-size: 1rem;
-        margin-top: 0.5rem;
-        color: rgb(158, 158, 158);
-        font-weight: 300
-    }
-    
-    .box-image {
-        width: 50px;
-        height: auto;
-        margin-right: 1rem;
-    }
-
-    .hover-image {
-        width: 450px;
-        height: 350px;
-        display: block;
-        position: relative;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 12px;
-    }
-
-    .hover-image img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
-
-    .hover-image-container {
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        height: auto;
-    }
-
-    .zoomable {
-        width: 100%;
-        transition: transform 0.1s ease;
-        transform-origin: center center;
-    }
-
-    .hover-image .hover {
-        opacity: 0;
-    }
-
-    .hover-image:hover .hover {
-        opacity: 1;
-    }
-
-    .hover-image:hover .default {
-        opacity: 0;
-    }
-
-    .project {
-        flex-direction: column;
-        padding: 24px;
-        width: 455px;
-        height: 530px;
-        position: relative;
-        background-color: #161616;
-    }
-
-    .project-title {
-        padding-top: 20px;
-    }
-
-    .project-image {
-        width: 450px;
-        height: 350px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 12px;
-    }
-
-    .button {
-        z-index: 1000;
-        color: #ffffff;
-        font-size: 1.5rem;
-        width: 40px;
-        height: 40px;
-        border: none;
-        border-radius: 5px;
-        position: absolute;
-        bottom: 15px;
-        right: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-    }
-
-    .language-container {
-        display: flex;
-        gap: 5px;
-        margin-top: 10px;
-        max-width: 80%;
-        flex-wrap: wrap;
-        bottom: 15px;
-        position: absolute;
-    }
-
-    .language {
-        width: 80px;
-        height: 40px;
-        background-color: rgb(36, 36, 36);
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        font-size: 0.8rem;
-    }
-
-    .desc {
-        margin-top: 0px;
-        position: relative;
-        font-size: 1.2rem;
-    }
-
-    .contact {
-        z-index: 1000;
-        background-color: rgb(14, 14, 14);
-        flex-direction: column;
-        padding: 2rem;
-        width: 950px;
-        height: 159px;
-    }
-
-    .contact-title {
-        font-size: 2rem;
-        margin-bottom: 0px;
-        margin-top: 5px;
-        text-align: center;
-    }
-
-    .contact-description {
-        font-size: 1.1rem;
-        color: rgb(194, 194, 194);
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    .contact-info {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .contact-link {
-        font-size: 1.2rem;
-        font-weight: bold;
-        padding: 10px 20px;
-        border-radius: 5px;
-        text-decoration: none;
-        text-align: center;
-        color: #ffffff;
-    }
-
-    .email-link {
-        background-color: #333333;
-    }
-    
-    .github-link, .button {
-        background-color: rgb(101, 22, 247);
-    }
-
-    .email-link:hover {
-        background-color: #4e4e4e;
-        transform: scale(1.05);
-    }
-
-    .button:hover, .github-link:hover {
-        background-color: rgb(127, 87, 238);
-        transform: scale(1.05);
-    }
-
-    .button:active, .contact-link:active {
-        transform: scale(0.95);
-    }
-    
-    .link {
-        right: 60px;
-        background-color:rgb(46, 83, 250);
-    }
-
-    .link:hover, .header-link:hover {
-        background-color: rgb(85, 112, 233)
-    }
-    
-    .box, .project, .contact {
-        display: flex;
-        border: 1px solid #333333;
-        border-radius: 12px;
-        font-size: 1.2rem;
-    }
-
-    .typewriter {
-       display: flex;
-    }
-
-    .typewriter h1 {
-       white-space: nowrap;
-       overflow: hidden;
-       border-right: 1px solid;
-       animation: typing 2s steps(19) forwards;
-    }
-
-    .cursor-diamond {
-        position: fixed;
-        width: 20px;
-        height: 20px;
-        background: #5570e9;
-        box-shadow: 0 0 40px 1px #5570e9;;
-        transform: translate(-50%, -50%) rotate(45deg);
-        pointer-events: none;
-        z-index: 1000;
-    }
-
-    .cursor-diamond::before {
-        content: '';
-        position: absolute;
-        top: -4px; left: -4px; right: -4px; bottom: -4px;
-        border: 2px solid #1e41db;
-        border-radius: 0;
-        transform-origin: center;
-        animation: pulsateBorder 1s infinite;
-        pointer-events: none;
-        transform: scale(1);
-    }
-
-    @keyframes pulsateBorder {
-        0%, 100% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(1.3); opacity: 0.6; }
-    }
-
-    @keyframes typing {
-        from {
-            width: 0;
-        }
-        to {
-            width: 100%;
-        }
-    }
-  </style>
+  <link rel="stylesheet" href="css/lines.css">
+  <link rel="stylesheet" href="css/blob.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/effects.css">
 </head>
 <body>
     <div class="blob blob1"></div>
@@ -361,12 +27,12 @@
     <div id="home" class="content">
         <div class = "typewriter">
             <div>
-                <h1>Hi! I'm <span style="color: rgb(85, 112, 233);">Cole Newton</span>!</h1>
+                <h1>Hi! I'm <span style="color: #5570e9;">Cole Newton</span>!</h1>
             </div>
         </div>
         <p class="desc">
             I'm a developer and student from Vancouver, Canada studying<br>
-            Computer Science at UBC. I play <span style="color: rgb(85, 112, 233);">chess</span> in my free time, at my peak<br>
+            Computer Science at UBC. I play <span style="color: #5570e9;">chess</span> in my free time, at my peak<br>
             I was top 50 in Canada on chess.com!
         </p>
     </div>
@@ -375,11 +41,11 @@
     <div class="content">
         <h1>Technologies</h1>
         <div class="boxes">
-            <div class="box" style="background-color: rgb(19, 24, 58); border-color: rgb(85, 112, 233);">
+            <div class="box" style="background-color: #13183a; border-color: #5570e9;">
                 <img src="icons/python.png" class="box-image">
                 <div class = "box-text">
-                <h2 class="box-title" style="color: rgb(85, 112, 233);">Python</h2>
-                <h2 class="box-description" style="color: rgb(85, 112, 233);">3 Years of Personal and Academic Experience</h2>
+                <h2 class="box-title" style="color: #5570e9;">Python</h2>
+                <h2 class="box-description" style="color: #5570e9;">3 Years of Personal and Academic Experience</h2>
                 </div>
             </div>
             <div class="box">
@@ -433,9 +99,7 @@
         <p class = "desc">Scroll to zoom in on the images!</p>
         <div class="boxes">
             <div class="project">
-                <div class="hover-image-container">
-                    <img src="projects/hiking.png" class="hover-image zoomable" data-default="projects/hiking.png" data-hover="projects/hiking2.png">
-                </div>
+                <img src="projects/hiking.png" class="project-image" data-default="projects/hiking.png" data-hover="projects/hiking2.png">
                 <h2 class="box-title project-title">Hiking Simulator</h2>
                 <h2 class="box-description">A 2d game with complex gameplay and unique art about walking along a trail with various biomes and obstacles.</h2>
                 <a href="https://github.com/ColeCollector/Hiking_Simulator" class="button">
@@ -448,9 +112,7 @@
                 
             </div>
             <div class="project">
-                <div class="hover-image-container">
-                    <img src="projects/keyboard.png" class="hover-image zoomable" data-default="projects/velocity.png">
-                </div>
+                <img src="projects/keyboard.png" class="project-image" data-default="projects/velocity.png">
                 <h2 class="box-title project-title">Keyboard Analyzer</h2>
                 <h2 class="box-description">A keyboard layout analyzer, grapher and generator. Generates layouts through a series of algorithms.</h2>
                 <a href="https://colecollector.github.io/Keyboard-Layout-Website/" class="button link">🔗</a>
@@ -467,9 +129,7 @@
                 </div>
             </div>
             <div class="project">
-                <div class="hover-image-container">
-                    <img src="projects/velocity.png" class="hover-image zoomable" data-default="projects/velocity.png">
-                </div>
+                <img src="projects/velocity.png" class="project-image" data-default="projects/velocity.png">
                 <h2 class="box-title project-title">Velocity</h2>
                 <h2 class="box-description">A simple mobile game where players aim at to reach a maximum height within the target range.</h2>
                 <a href="https://github.com/ColeCollector/Velocity" class="button">
@@ -482,9 +142,7 @@
                 </div>
             </div>       
             <div class="project">
-                <div class="hover-image-container">
-                    <img src="projects/chess.png" class="hover-image zoomable" data-default="projects/velocity.png">
-                </div>
+                <img src="projects/chess.png" class="project-image" data-default="projects/velocity.png">
                 <h2 class="box-title project-title">Chess Bot</h2>
                 <h2 class="box-description">A simple chess bot made from scratch with no libraries.</h2>
                 <a href="https://github.com/ColeCollector/Highschool-Capstone" class="button">
@@ -512,6 +170,19 @@
     <div class="cursor-diamond"></div>
 
    <script>
+        const boxes = document.querySelectorAll('.box');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    boxes.forEach(box => observer.observe(box));
         const diamond = document.querySelector('.cursor-diamond');
 
         window.addEventListener('mousemove', (e) => {
@@ -519,51 +190,16 @@
         diamond.style.top = e.clientY + 'px';
         });
 
-        document.querySelectorAll('.hover-image-container').forEach(container => {
-            const img = container.querySelector('.zoomable');
-            let timeoutId;
+        document.querySelectorAll('.project-image-container').forEach(container => {
+            const img = container.querySelector('.project-image');
             let showingHover;
-            let scale = 1;
-
-            container.addEventListener('mousemove', e => {
-                const rect = container.getBoundingClientRect();
-                const x = ((e.clientX - rect.left) / rect.width) * 100;
-                const y = ((e.clientY - rect.top) / rect.height) * 100;
-
-                img.style.transformOrigin = `${x}% ${y}%`;
-                img.style.transform = `scale(${scale})`;
-            });
-
-            // Disable page scrolling while zooming
-            container.addEventListener('wheel', (e) => {
-                if (e.deltaY < 0) {
-                    scale = Math.min(scale + 0.1, 3.5);
-                    e.preventDefault();
-
-                } else {
-                    scale = Math.max(scale - 0.1, 1); 
-                    if (scale != 1) {
-                        e.preventDefault();
-                    }
-                }
-   
-                img.style.transform = `scale(${scale})`;
-            }, { passive: false });
-
-            // Automatically switch images every 3 seconds
+            
             setInterval(() => {
                 if (img.dataset.hover) {
                     img.src = showingHover ? img.dataset.default : img.dataset.hover;
                     showingHover = !showingHover;
                 }
             }, 3000);
-
-            container.addEventListener('mouseleave', () => {
-                clearTimeout(timeoutId);
-                img.style.transform = "scale(1)";
-                img.style.transformOrigin = "center center";
-                scale = 1;  // Reset scale when mouse leaves
-            });
         });
    </script>
 </body>
