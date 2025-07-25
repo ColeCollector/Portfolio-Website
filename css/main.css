@@ -33,7 +33,6 @@ header {
 }
 
 .content {
-    padding-top: 150px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -42,12 +41,13 @@ header {
     margin: 0 auto;
     padding-left: 1rem; 
     padding-right: 1rem;
+    padding-top: 150px;
 }
 
 .boxes {
+    display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 16px;
@@ -55,8 +55,8 @@ header {
 }
 
 .box {
-    position: relative;
     display: flex;
+    position: relative;
     align-items: center;
     padding: 16px;
     width: 298px;
@@ -81,7 +81,6 @@ header {
 
 .box-text {
     position: absolute;
-    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     top: 10px;
@@ -98,52 +97,27 @@ header {
 
 .box-image {
     width: 50px;
-    height: auto;
+    height: 50px;
     margin-right: 1rem;
 }
 
-.hover-image {
+.project-image {
+    position: relative;
     width: 450px;
     height: 350px;
     display: block;
-    position: relative;
     margin-left: auto;
     margin-right: auto;
     border-radius: 12px;
 }
 
-.hover-image img {
+.project-image img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: auto;
     object-fit: cover;
-}
-
-.hover-image-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: auto;
-}
-
-.zoomable {
-    width: 100%;
-    transition: transform 0.1s ease;
-    transform-origin: center center;
-}
-
-.hover-image .hover {
-    opacity: 0;
-}
-
-.hover-image:hover .hover {
-    opacity: 1;
-}
-
-.hover-image:hover .default {
-    opacity: 0;
 }
 
 .project {
@@ -156,15 +130,6 @@ header {
 
 .project-title {
     padding-top: 20px;
-}
-
-.project-image {
-    width: 450px;
-    height: 350px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 12px;
 }
 
 .button {
@@ -282,7 +247,6 @@ header {
 }
 
 .box, .project, .contact {
-    display: flex;
     border: 1px solid #282235;
     border-radius: 12px;
     font-size: 1.2rem;
