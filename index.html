@@ -174,36 +174,34 @@
 
    <script>
         const boxes = document.querySelectorAll('.box');
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        } else {
-          entry.target.classList.remove('show');
-        }
-      });
-    }, { threshold: 0.2 });
-
-    boxes.forEach(box => observer.observe(box));
-        const diamond = document.querySelector('.cursor-diamond');
-
-        window.addEventListener('mousemove', (e) => {
-        diamond.style.left = e.clientX + 'px';
-        diamond.style.top = e.clientY + 'px';
+        const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            } else {
+            entry.target.classList.remove('show');
+            }
         });
+        }, { threshold: 0.2 });
 
-        document.querySelectorAll('.project-image').forEach(img => {
-            let showingHover = false;
+        boxes.forEach(box => observer.observe(box));
+            const diamond = document.querySelector('.cursor-diamond');
 
-            setInterval(() => {
-                if (img.dataset.hover) {
-                    img.src = showingHover ? img.dataset.default : img.dataset.hover;
-                    showingHover = !showingHover;
-                }
-            }, 3000);
-        });
+            window.addEventListener('mousemove', (e) => {
+            diamond.style.left = e.clientX + 'px';
+            diamond.style.top = e.clientY + 'px';
+            });
 
+            document.querySelectorAll('.project-image').forEach(img => {
+                let showingHover = false;
+
+                setInterval(() => {
+                    if (img.dataset.hover) {
+                        img.src = showingHover ? img.dataset.default : img.dataset.hover;
+                        showingHover = !showingHover;
+                    }
+                }, 3000);
+            });
    </script>
 </body>
 </html>
