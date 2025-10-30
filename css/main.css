@@ -12,26 +12,6 @@ body {
     cursor: none;
 }
 
-header {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    gap: 2rem;
-    padding: 1rem;
-    padding-inline: 0.5rem;
-    border: 1px solid #333333;
-    border-radius: 12px;
-}
-
-.header-link {
-    color: #dcdcdc;
-    text-decoration: none;
-    font-size: 1.2rem;
-    padding: 0.5rem;
-    border-radius: 5px;
-}
-
 .content {
     display: flex;
     flex-direction: column;
@@ -59,7 +39,7 @@ header {
     position: relative;
     align-items: center;
     padding: 16px;
-    width: 298px;
+    width: 297px;
     height: 64px;
 
     transform: translateX(-50%);
@@ -108,7 +88,7 @@ header {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 12px;
+    border-radius: 15px;
 }
 
 .project-image img {
@@ -240,13 +220,13 @@ header {
     background-color:hsl(229, 95%, 58%);
 }
 
-.link:hover, .header-link:hover {
+.link:hover {
     background-color: #5570e9
 }
 
 .box, .project, .contact {
-    border: 1px solid #282235;
-    border-radius: 12px;
+    border: 2px solid #212025;
+    border-radius: 15px;
     font-size: 1.2rem;
-    background-color: #0f0d13;
+    background-color: #0e0d0f;
 }
