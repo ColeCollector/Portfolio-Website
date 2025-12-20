@@ -280,3 +280,39 @@ body {
 .box:hover::before {
   animation-play-state: running;
 }
+
+
+
+
+@media (max-width: 768px) {
+    .content {
+        padding-top: 80px;
+    }
+
+    .box {
+        width: 40%;
+        transform: none;
+    }
+
+    .box-text {
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+
+    .project,
+    .project-image,
+    .contact {
+        width: 100%;
+        height: auto;
+    }
+
+    .language-container {
+        position: relative;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
