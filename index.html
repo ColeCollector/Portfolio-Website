@@ -16,7 +16,7 @@
     <div class="blob blob6"></div>
     <div class="blob blob7"></div>
     
-    <div id="home" class="content">
+    <div class="content">
         <div class="typewriter">
             <div>
                 <h1>Hi! I'm <span style="color: #5570e9;">Cole Newton</span>!</h1>
@@ -33,53 +33,60 @@
     <div class="content">
         <h1>Technologies</h1>
         <div class="boxes">
-            <div class="box" style="background-color: #13183a; border-color: #5570e9;">
+            <div class="box">
                 <img src="icons/python.png" class="box-image">
                 <div class="box-text">
-                <h2 class="box-title" style="color: #5570e9;">Python</h2>
-                <h2 class="box-description" style="color: #5570e9;">3 Years of Personal and Academic Experience</h2>
+                <h2 class="box-title">Python</h2>
+                <h2 class="box-description">Academic + Personal (Primary Skill) </h2>
                 </div>
             </div>
             <div class="box">
                 <img src="icons/java.png" class="box-image">
                 <div class="box-text">
                 <h2 class="box-title">Java</h2>
-                <h2 class="box-description">1 Year of Academic Experience</h2>
+                <h2 class="box-description">Academic</h2>
+                </div>
+            </div>
+           <div class="box">
+                <img src="icons/cplusplus.png" class="box-image">
+                <div class="box-text">
+                <h2 class="box-title">C++</h2>
+                <h2 class="box-description">Academic</h2>
                 </div>
             </div>
             <div class="box">
                 <img src="icons/html.png" class="box-image">
                 <div class="box-text">
                 <h2 class="box-title">HTML</h2>
-                <h2 class="box-description">4 Months of Personal Projects</h2>
-                </div>
-            </div>
-            <div class="box">
-                <img src="icons/unreal_engine.png" class="box-image">
-                <div class="box-text">
-                <h2 class="box-title">Unreal Engine</h2>
-                <h2 class="box-description">4 Months of Personal Projects</h2>
-                </div>
-            </div>
-            <div class="box">
-                <img src="icons/sql.png" class="box-image">
-                <div class="box-text">
-                <h2 class="box-title">SQL</h2>
-                <h2 class="box-description">4 Months of Academic Experience</h2>
+                <h2 class="box-description">Personal</h2>
                 </div>
             </div>
             <div class="box">
                 <img src="icons/css.png" class="box-image">
                 <div class="box-text">
                 <h2 class="box-title">CSS</h2>
-                <h2 class="box-description">4 Months of Personal Projects</h2>
+                <h2 class="box-description">Personal</h2>
                 </div>
             </div>
             <div class="box">
                 <img src="icons/javascript.png" class="box-image">
                 <div class="box-text">
                 <h2 class="box-title">JavaScript</h2>
-                <h2 class="box-description">4 Months of Personal Projects</h2>
+                <h2 class="box-description">Personal</h2>
+                </div>
+            </div>
+            <div class="box">
+                <img src="icons/sql.png" class="box-image">
+                <div class="box-text">
+                <h2 class="box-title">PostgreSQL</h2>
+                <h2 class="box-description">Personal</h2>
+                </div>
+            </div>
+            <div class="box">
+                <img src="icons/unreal_engine.png" class="box-image">
+                <div class="box-text">
+                <h2 class="box-title">Unreal Engine</h2>
+                <h2 class="box-description">Personal</h2>
                 </div>
             </div>
         </div>
@@ -87,7 +94,7 @@
   
     <!-- Main content area with centered text and boxes -->
     <div class="content">
-        <h1 id="projects">Projects</h1>
+        <h1>Projects</h1>
         <div class="boxes">
             <div class="project">
                 <img src="projects/hiking.png" class="project-image" data-default="projects/hiking.png" data-hover="projects/hiking2.png">
@@ -105,7 +112,7 @@
             <div class="project">
                 <img src="projects/keyboard.png" class="project-image">
                 <h2 class="box-title project-title">Keyboard Analyzer</h2>
-                <h2 class="box-description">A keyboard layout analyzer, grapher and generator. Generates layouts through a series of algorithms and plots other people layouts based on metrics.</h2>
+                <h2 class="box-description">A keyboard layout analyzer, grapher and generator. Can be used to plot a database of keyboard layouts based on selectable metrics.</h2>
                 <a href="https://colecollector.github.io/Keyboard-Layout-Website/" class="button link">🔗</a>
                 <a href="https://github.com/ColeCollector/Keyboard-Layout-Website" class="button">
                     <img src="icons/github.png" style="width: 30px"> </src>
@@ -153,7 +160,7 @@
     </div>
 
     <!-- Contact Section -->
-    <div id="contact" class="content">
+    <div class="content">
             <div class="contact">
             <h2 class="contact-title">Contact Me</h2>
             <div class="contact-info">
@@ -174,7 +181,7 @@
             entry.target.classList.remove('show');
             }
         });
-        }, { threshold: 0.2 });
+        }, { threshold: 0 });
 
         boxes.forEach(box => observer.observe(box));
             const diamond = document.querySelector('.cursor-diamond');

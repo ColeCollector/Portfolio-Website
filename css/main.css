@@ -5,7 +5,7 @@ html, body {
 }
 
 body {
-    background-color: #0f0d13;
+    background-color: #0b0b0e;
     color: #dcdcdc;
     font-family: Arial;
     padding-bottom: 20px;
@@ -19,9 +19,9 @@ body {
     text-align: left;
     max-width: 1100px;
     margin: 0 auto;
-    padding-left: 1rem; 
-    padding-right: 1rem;
     padding-top: 150px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 .boxes {
@@ -29,8 +29,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 16px;
+    gap: 12px;
     width: 100%;
 }
 
@@ -39,11 +38,12 @@ body {
     position: relative;
     align-items: center;
     padding: 16px;
-    width: 297px;
+    width: 230px;
     height: 64px;
 
     transform: translateX(-50%);
     transition: transform 0.8s ease;
+    overflow: hidden;
 }
 
 .box.show {
@@ -63,14 +63,14 @@ body {
     position: absolute;
     flex-direction: column;
     justify-content: flex-start;
-    top: 10px;
+    top: 15px;
     left: 85px;
     margin-right: 15px;
 }
 
 .box-description {
-    font-size: 1.1rem;
-    margin-top: 0.5rem;
+    font-size: 1rem;
+    margin-top: 0.1rem;
     color: #9e9e9e;
     font-weight: 300
 }
@@ -79,33 +79,27 @@ body {
     width: 50px;
     height: 50px;
     margin-right: 1rem;
+    opacity: 0.8;
 }
 
 .project-image {
     position: relative;
-    width: 450px;
-    height: 350px;
+    width: 492px;
+    height: 383px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     border-radius: 15px;
 }
 
-.project-image img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
 .project {
-    flex-direction: column;
     padding: 24px;
-    width: 455px;
+    width: 492px;
     height: 580px;
+    margin: 0 auto;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-title {
@@ -161,7 +155,7 @@ body {
     z-index: 1000;
     flex-direction: column;
     padding: 2rem;
-    width: 950px;
+    width: 1032px;
     height: 140px;
 }
 
@@ -217,7 +211,7 @@ body {
 
 .link {
     right: 60px;
-    background-color:hsl(229, 95%, 58%);
+    background-color:#2e53fa;
 }
 
 .link:hover {
@@ -225,8 +219,64 @@ body {
 }
 
 .box, .project, .contact {
-    border: 2px solid #212025;
     border-radius: 15px;
     font-size: 1.2rem;
-    background-color: #0e0d0f;
+    background-color: #0b0b0e;
+}
+
+.project, .contact {
+    border: 2px solid #212025;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+
+  /* STATIC BORDER COLOR */
+  background: linear-gradient(#212025, #212025);
+
+  /* cut out the center */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+
+  pointer-events: none;
+}
+
+
+@keyframes spinBorder {
+  to {
+    --angle: 410deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 50deg;
+  inherits: false;
+}
+
+.box:hover::before {
+  background: conic-gradient(
+    from var(--angle),
+    #212025,
+    #212025,
+    #5570e9
+  );
+
+  animation: spinBorder 3s linear infinite;
+}
+
+
+.box:hover::before {
+  animation-play-state: running;
 }
