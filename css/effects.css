@@ -6,7 +6,7 @@
     white-space: nowrap;
     overflow: hidden;
     border-right: 1px solid;
-    animation: typing 2s steps(19) forwards;
+    animation: typing 3s steps(19) forwards;
 }
 
 .cursor-diamond {
@@ -44,4 +44,52 @@
     to {
         width: 100%;
     }
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+
+  /* STATIC BORDER COLOR */
+  background: linear-gradient(#212025, #212025);
+
+  /* cut out the center */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+
+  pointer-events: none;
+}
+
+
+@keyframes spinBorder {
+  to {
+    --angle: 410deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 50deg;
+  inherits: false;
+}
+
+.box:hover::before {
+  background: conic-gradient(
+    from var(--angle),
+    #212025,
+    #212025,
+    #5570e9
+  );
+
+  animation: spinBorder 3s linear infinite;
 }

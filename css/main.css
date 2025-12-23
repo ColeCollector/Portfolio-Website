@@ -1,25 +1,24 @@
 html, body {
-    z-index: 0;
     margin: 0;
     padding: 0;
+    padding-bottom: 50px;
+    font-family: "Qilka-Bold";
 }
 
 body {
     background-color: #0b0b0e;
     color: #dcdcdc;
-    font-family: Arial;
     padding-bottom: 20px;
     cursor: none;
+    font-family: "Qilka-Bold";
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
     align-items: flex-start;
     text-align: left;
     max-width: 1100px;
     margin: 0 auto;
-    padding-top: 150px;
+    padding-top: 130px;
     padding-left: 16px;
     padding-right: 16px;
 }
@@ -40,17 +39,18 @@ body {
     padding: 16px;
     width: 230px;
     height: 64px;
-
     transform: translateX(-50%);
-    transition: transform 0.8s ease;
-    overflow: hidden;
 }
 
 .box.show {
     transform: translateX(0);
 }
 
-.box:hover {
+.box, .project {
+    transition: transform 0.8s ease;
+}
+
+.box:hover, .project:hover {
     transform: translateY(-10px);
 }
 
@@ -95,11 +95,9 @@ body {
 .project {
     padding: 24px;
     width: 492px;
-    height: 580px;
+    height: 600px;
     margin: 0 auto;
     position: relative;
-    display: flex;
-    flex-direction: column;
 }
 
 .project-title {
@@ -146,14 +144,14 @@ body {
 }
 
 .desc {
+    width: 600px;
     margin-top: 0px;
     position: relative;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 .contact {
     z-index: 1000;
-    flex-direction: column;
     padding: 2rem;
     width: 1032px;
     height: 140px;
@@ -228,61 +226,12 @@ body {
     border: 2px solid #212025;
 }
 
-.box::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  padding: 2px;
-  border-radius: inherit;
-
-  /* STATIC BORDER COLOR */
-  background: linear-gradient(#212025, #212025);
-
-  /* cut out the center */
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-
-  mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  mask-composite: exclude;
-
-  pointer-events: none;
+.content,
+.project,
+.contact {
+    display: flex;
+    flex-direction: column;
 }
-
-
-@keyframes spinBorder {
-  to {
-    --angle: 410deg;
-  }
-}
-
-@property --angle {
-  syntax: "<angle>";
-  initial-value: 50deg;
-  inherits: false;
-}
-
-.box:hover::before {
-  background: conic-gradient(
-    from var(--angle),
-    #212025,
-    #212025,
-    #5570e9
-  );
-
-  animation: spinBorder 3s linear infinite;
-}
-
-
-.box:hover::before {
-  animation-play-state: running;
-}
-
-
-
 
 @media (max-width: 768px) {
     .content {
@@ -315,4 +264,16 @@ body {
         flex-direction: column;
         gap: 12px;
     }
+
+    .desc {
+        width: auto;
+    }
+}
+
+
+@font-face {
+  font-family: "Qilka-Bold";
+  src: url("../Qilka-Bold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
