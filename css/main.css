@@ -1,4 +1,5 @@
 html, body {
+    
     margin: 0;
     padding: 0;
     padding-bottom: 50px;
@@ -14,7 +15,7 @@ body {
 }
 
 .content {
-    align-items: flex-start;
+    align-items: center;
     text-align: left;
     max-width: 1100px;
     margin: 0 auto;
@@ -46,11 +47,11 @@ body {
     transform: translateX(0);
 }
 
-.box, .project {
+.box {
     transition: transform 0.8s ease;
 }
 
-.box:hover, .project:hover {
+.box:hover {
     transform: translateY(-10px);
 }
 
@@ -216,6 +217,14 @@ body {
     background-color: #5570e9
 }
 
+.download {
+    background-color:#11b159;
+}
+
+.download:hover {
+    background-color: #0bd365
+}
+
 .box, .project, .contact {
     border-radius: 15px;
     font-size: 1.2rem;
@@ -231,6 +240,25 @@ body {
 .contact {
     display: flex;
     flex-direction: column;
+}
+
+.content {
+    display: flex;
+    gap: 32px;
+}
+
+
+.project,
+.contact {
+    padding: 24px;
+    position: relative;
+}
+
+
+.project,
+.contact {
+    width: 100%;
+    max-width: 492px;
 }
 
 @media (max-width: 768px) {
@@ -261,15 +289,19 @@ body {
     }
 
     .contact-info {
-        flex-direction: column;
         gap: 12px;
     }
-
+    
     .desc {
         width: auto;
     }
-}
 
+    .project,
+    .contact {
+        width: 100%;
+        max-width: 492px;
+    }
+}
 
 @font-face {
   font-family: "Qilka-Bold";
