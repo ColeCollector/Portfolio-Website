@@ -3,7 +3,7 @@ html, body {
     margin: 0;
     padding: 0;
     padding-bottom: 50px;
-    font-family: "Qilka-Bold";
+    font-family: "custom-font";
 }
 
 body {
@@ -11,7 +11,7 @@ body {
     color: #dcdcdc;
     padding-bottom: 20px;
     cursor: none;
-    font-family: "Qilka-Bold";
+    font-family: "custom-font";
 }
 
 .content {
@@ -305,8 +305,8 @@ body {
 }
 
 @font-face {
-  font-family: "Qilka-Bold";
-  src: url("../Qilka-Bold.otf") format("opentype");
+  font-family: "custom-font";
+  src: url("../Helvetica-Rounded.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
